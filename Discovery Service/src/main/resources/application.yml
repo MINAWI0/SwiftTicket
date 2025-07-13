@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ${DISCOVERY_SERVICE_NAME}
+server:
+  port: ${DISCOVERY_SERVICE_PORT}
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${DISCOVERY_SERVICE_PORT}/eureka/
+  instance:
+    hostname: ${DISCOVERY_SERVICE_HOST}
